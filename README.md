@@ -4,22 +4,22 @@
 
 ![Demo](docs/demo.gif)
 
-## ✨ 特性
+##  特性
 
-- 🎯 **雷达扫描动画** - 平滑的顺时针旋转扫描线，同心圆和十字交叉线
-- 🔴 **动态目标检测** - 5个固定目标点，扫描时高亮显示并产生回波残影效果
-- 📟 **实时代码滚动** - 终端风格的代码从底部向上流动，带淡入淡出效果
-- ⚡ **高性能非阻塞动画** - 基于 SysTick 定时器，独立刷新周期，无闪烁
-- 🎨 **科幻视觉风格** - 青色边框、绿色雷达、橙色目标、黑色背景
+-  **雷达扫描动画** - 平滑的顺时针旋转扫描线，同心圆和十字交叉线
+-  **动态目标检测** - 5个固定目标点，扫描时高亮显示并产生回波残影效果
+-  **实时代码滚动** - 终端风格的代码从底部向上流动，带淡入淡出效果
+-  **高性能非阻塞动画** - 基于 SysTick 定时器，独立刷新周期，无闪烁
+-  **科幻视觉风格** - 青色边框、绿色雷达、橙色目标、黑色背景
 
-## 🎥 效果预览
+##  效果预览
 
 - **雷达扫描**: 50fps 平滑旋转，扫描线经过时目标点亮起（橙色光晕）
 - **回波效果**: 目标点在扫描后逐渐衰减，形成余辉效果
 - **代码滚动**: 60fps 像素级平滑滚动，顶部和底部淡入淡出
 - **日期显示**: 底部青色日期区域，每秒更新
 
-## 🚀 快速开始
+##  快速开始
 
 ### 硬件要求
 
@@ -68,13 +68,13 @@ build.bat -u scifi_ui
 ./build.sh -u scifi_ui
 ```
 
-## 📊 资源使用
+##  资源使用
 
 - **Flash**: 13.5 KB (5.1%)
 - **RAM**: 15.6 KB (31.8%)
 - **帧率**: 雷达 50fps / 代码滚动 60fps
 
-## 🔧 技术实现
+##  技术实现
 
 ### 非阻塞动画架构
 
@@ -120,7 +120,7 @@ static uint16_t blend_color(uint16_t color1, uint16_t color2, uint8_t alpha)
 }
 ```
 
-## 📁 项目结构
+##  项目结构
 
 ```
 stm32-scifi-radar/
@@ -128,20 +128,20 @@ stm32-scifi-radar/
 ├── build.sh / build.bat    # 快速编译脚本
 │
 ├── applications/
-│   ├── 04_scifi_ui/       # 🎯 科幻雷达终端（主项目）
+│   ├── 04_scifi_ui/       # 科幻雷达终端（主项目）
 │   ├── 01_hello_world/    # Hello World 示例
 │   ├── 02_pd_animation/   # PD 动画播放器
 │   └── 03_thermal_camera/ # 热成像相机
 │
 ├── common/
-│   ├── ui_graphics.c/h    # 🎨 雷达和代码滚动实现
+│   ├── ui_graphics.c/h    # 雷达和代码滚动实现
 │   ├── image_display.c/h  # 图像显示
 │   ├── thermal_render.c/h # 热成像渲染
 │   └── stm32f10x_it.c/h   # 中断处理（SysTick）
 │
 ├── bsp/
-│   ├── bsp_delay/         # ⏱️ 延时和时间戳功能
-│   └── bsp_st7789/        # 📺 ST7789 SPI 显示驱动
+│   ├── bsp_delay/         # 延时和时间戳功能
+│   └── bsp_st7789/        # ST7789 SPI 显示驱动
 │
 ├── drivers/               # 外设驱动
 ├── library/               # STM32 标准外设库
@@ -149,7 +149,7 @@ stm32-scifi-radar/
 └── include/               # 共享头文件
 ```
 
-## 🎨 自定义配置
+##  自定义配置
 
 ### 修改雷达参数
 
@@ -183,7 +183,7 @@ code_panel.pixel_offset += 36;  // 增大数值加速，减小数值减速
 #define COLOR_DARK_GREEN  0x0320  // 同心圆/十字线（暗绿）
 ```
 
-## 📚 核心 API
+##  核心 API
 
 ### UI 图形库
 
@@ -240,14 +240,14 @@ pio run -e pd_animation -t upload
 pio run -e thermal_camera -t upload
 ```
 
-## 📖 开发文档
+##  开发文档
 
 - [CHEAT_SHEET.txt](CHEAT_SHEET.txt) - 快速参考卡片
 - [STM32F103 数据手册](https://www.st.com/resource/en/datasheet/stm32f103rc.pdf)
 - [ST7789 数据手册](https://www.displayfuture.com/Display/datasheet/controller/ST7789.pdf)
 - [PlatformIO 文档](https://docs.platformio.org/)
 
-## 🔍 常见问题
+##  常见问题
 
 ### Q: 显示屏显示偏移或颜色异常
 **A**: 不同模块可能需要调整 `st7789.h` 中的配置：
@@ -266,15 +266,15 @@ pio run -e thermal_camera -t upload
 ### Q: 内存不足
 **A**: 当前配置使用 31.8% RAM，如果添加功能导致内存不足，可以减少雷达缓冲区大小或代码行数。
 
-## 🤝 贡献
+##  贡献
 
 欢迎提交 Issue 和 Pull Request！
 
-## 📄 许可证
+##  许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
 
-## 🙏 致谢
+##  致谢
 
 - STM32 标准外设库
 - PlatformIO 开发平台
